@@ -4,7 +4,7 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"assets/NOTICES": "14957a26c0c9f87693f72b61bb16b885",
+"assets/NOTICES": "8c8d7eb28e8ea85131da75e87f61cd45",
 "assets/FontManifest.json": "4b91a2e1a48635cedb8b2f504d599496",
 "assets/assets/images/icons/ic_stack_overflow.png": "edfc28d774a94bda8488462bcd05c3e1",
 "assets/assets/images/icons/ic_twitter.png": "9170eba6a80e42ffb60d0f5afaea6d6c",
@@ -71,16 +71,16 @@ const RESOURCES = {
 "assets/assets/fonts/noto_sans_jp/NotoSansJP-Light.otf": "78d6753b4b8aaef38ad581eb248606ef",
 "assets/assets/fonts/noto_sans_jp/NotoSansJP-Regular.otf": "2bbd3068a53daa60b61f29c3ee9531e7",
 "assets/assets/fonts/noto_sans_jp/NotoSansJP-Bold.otf": "0ff89c4f64cd8f24f68a3034fbfefec1",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/AssetManifest.json": "4bf4f2e1e6ad940513b6281362f6bb58",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "manifest.json": "5b6deb1f2deec82d4d0364c215bdff39",
-"main.dart.js": "3a6faeba7ed734546ff900787a075308",
+"main.dart.js": "6a8a6ed259d8de1909827c42bf86aab6",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "version.json": "26135e4be13343012ada35bf6692fcf3",
-"index.html": "f86083c8a377309df36a088f5ccc2751",
-"/": "f86083c8a377309df36a088f5ccc2751"
+"index.html": "2e039299cfec444147322f2db654270f",
+"/": "2e039299cfec444147322f2db654270f"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -98,7 +98,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
